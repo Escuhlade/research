@@ -1,0 +1,102 @@
+/*
+
+ * Name : Aaiyan Virji
+ 
+ *
+ 
+ */
+
+import java.util.*;
+
+public class FeuAwarness {
+
+	// need to show how ddos affects the world
+	// first taking a survey if user has been affected by ddos
+	// second displaying a solution (VPN)
+	// displaying another solution (ISP)
+	// finally method i almost got rid of ddos
+	
+	//instance and class variables
+	static Scanner sc = new Scanner(System.in);
+	String userName;
+	String haveBeenAffected;
+	String ispName;
+	//array of ISP names
+	static String ispList[] = { "rogers", "telus", "bell", "at&t", "verizon",
+			"frontier", "centuryLink" };
+//constructor 
+	public FeuAwarness() {
+		userName = " ";
+		haveBeenAffected = " ";
+		ispName = " ";
+	}// end of constructor
+
+	//the following block of code is to find out what the user has had to deal with DDOS and
+	//to figure out what there ISP is and ETC
+	public void survey() {
+		System.out.println("please enter your name if you would like to. "
+				+ "\n" + "if for security reasons you would not like to "
+				+ "\n" + "please enter the first letter of your first name");
+		userName = sc.nextLine();
+		System.out.println("Hello: " + userName + " "
+				+ "by entering your name I am understanding" + "\n"
+				+ "you comply to survey rules of being honest");
+		System.out.print("\n"
+						+ "Okay , "
+						+ userName
+						+ " "
+						+ "\n"
+						+ "Have you ever been affected by a DDOS attack (Distrubited Denial of Service) ");
+		haveBeenAffected = sc.nextLine();
+		if (haveBeenAffected.equalsIgnoreCase("Yes")) {
+			System.out
+					.println("That is very unfourtane of you , " + userName
+							+ " " + "\n"
+							+ "But luckly we have a solution to help you ");
+		}// end of if
+		else if (haveBeenAffected.equalsIgnoreCase("No")) {
+			System.out
+					.println("Im glad to hear that you have not been affected by these malicious attacks "
+							+ "\n"
+							+ userName
+							+ " But its never to late to be safe we offer VPNs to help hid your current IP (internet protocol address");
+		}// end of else statement
+		System.out.println("\n" +"please enter the name of your ISP " + "\n"
+				+ "this is so we can help aid you with your protection");
+		ispName = sc.nextLine();
+		System.out.println("Your Isp name is : "
+						+ ispName
+						+ "\n"
+						+ "that is great because for your ISp we have speicalized program to aid remove malicious packets from coming to your router ");
+
+	}// end of survey
+
+	//this method was to equals ignore case the input
+	  private String equalIgnoreCare(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	  
+	  
+	  //this method is to check if the user input for ISP is inside the array
+	  // IF it is then a plan will be given to help avoid DDOS attacks
+	  //sequential search 
+	public boolean checkIspList(){
+	 System.out.println("If the following snippet of code returns true" + "\n" + "then we have a dedicated plan to help fix your problems");
+	  System.out.println("please enter your ispName again"); ispName =
+	  sc.nextLine();
+	  for (int i = 0; i < ispList.length; i++){ 
+	   if (ispName.equalsIgnoreCase(ispList[i])){
+	    boolean answer;
+	    answer = true; 
+	     return answer; 
+	   } 
+	   
+	   }
+	  return false;
+	  }//end of checkIsp List 
+	  //if this program returns true we have a dedicated plan to help fix your issues 
+	
+
+}// end of class
