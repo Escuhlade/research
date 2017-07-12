@@ -1,0 +1,19 @@
+public class FeuTester {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// object oriented
+		//calling off an object below
+		FeuAwarness test = new FeuAwarness();
+		test.survey();
+		System.out.println(test.checkIspList());
+		feuSubClass tester = new feuSubClass();
+		tester.solution1();
+		//tester.GUI();
+		//tester.IPAdressConfig();
+		//tester.hotspotShield();
+		subclassofSubclassFeu test1 = new subclassofSubclassFeu(null);
+		test1.setVisible(true);
+	}
+
+}
