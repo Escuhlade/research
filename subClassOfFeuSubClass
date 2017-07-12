@@ -1,0 +1,68 @@
+import javax.swing.*;
+
+	import java.awt.*;
+
+	import java.awt.event.*;
+	import java.util.*;
+	
+//this class is a sub class of feu sub class
+	class subclassofSubclassFeu extends JFrame implements ActionListener{
+//adding buttons
+
+	JButton Yes ; // reference to the button object
+	JButton No;
+	
+	JLabel label;
+
+	// constructor for ButtonFrame2
+//following method brings up gui and gives you option whether you want to connect to VPN or not
+	subclassofSubclassFeu(String title){
+System.out.print("if you click yes on the button you are agreeing to" +"\n" +" Start using this vpn by clicking yes your IP address will now change ");
+	
+	setTitle("Best Free VPN *HOTSPOT SHIELD* (CLICK TO START USING VPN)");
+	setLayout( new FlowLayout() ); // set the layout manager
+	setSize(300,400);
+	add(new JLabel(new ImageIcon("C:\\Users\\aaiya\\Desktop\\apps.21087.9007199266285780.d5cec3a9-9b23-4d79-8941-4a6eac35b333.png")));
+	// construct a Button
+
+	Yes = new JButton("Yes");
+	No = new JButton("No");
+	
+
+
+
+
+	// register the ButtonFrame object as the listener for the JButton.
+
+	Yes.addActionListener(this);
+	No.addActionListener(this);
+	
+
+	add(Yes ); // add the button to the JFrame
+	add(No);
+	
+
+	setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+
+	}
+
+
+	//this mrthod runs the action if yes is clicked then it runs two methods from its super class
+	
+	public void actionPerformed(ActionEvent e){
+
+	if(e.getSource() == Yes){
+feuSubClass.IPAdressConfig();
+feuSubClass.hotspotShield();	
+	}//if red
+
+	if(e.getSource() == No){
+	  System.out.println("Sorry for the inconvience" + "\n" + " We are currently unavaible to help you but for further assistance contact your ISP");  
+	}//if yellow
+
+	
+
+	}//actionPerformed
+
+	}//class
+
