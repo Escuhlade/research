@@ -1,0 +1,53 @@
+import java.util.*;
+
+public class MatrixCreated {
+	static int matrixSize;
+	static int matrixSize1;
+	static Scanner sc = new Scanner(System.in);
+	static int[][] matrix = new int[0][0];
+	static int[][] matrix1 = new int[1][1];	
+
+	
+	
+	
+	public void creatingMatrix() {
+		System.out.println("please enter the size of the matrix you would like to have");
+		matrixSize = sc.nextInt();
+		if (matrixSize <= 4) {
+			matrix = new int[matrixSize][matrixSize];
+			System.out.println("that was a valid Matrix size");
+		} else {
+			System.out.println("that was not a valid matrix size please try again");
+			creatingMatrix();
+		} // end of else statement
+
+	}// end of creating Matrix
+
+	
+	
+	public void creatingMatrix1() {
+		System.out.println("please enter the size of the matrix you would like to have");
+		matrixSize1 = sc.nextInt();
+
+		if (matrixSize1 <= 4) {
+			matrix1 = new int[matrixSize1][matrixSize1];
+		} // end of if
+		else {
+			System.out.println("that was not a valid matrix size please try again");
+			creatingMatrix1();
+		} // end of else
+	}// end of second matrix
+
+	
+	
+	
+	public void displayMatrix() {
+		System.out.println("This is the inital matrix");
+		for (int row = 0; row < matrixSize; row++) {
+			for (int col = 0; col < matrixSize; col++) {
+				System.out.print(matrix[row][col]);
+			} // end of nested for
+			System.out.println();
+		} // end of for loop
+	}// end of display matrix
+}// end of class
