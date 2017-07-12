@@ -1,0 +1,107 @@
+/*
+ * Name : Aaiyan Virji
+ * Date :April 29th /2017
+ *  Purpose: The purpose of this code is to allow the user to shop online. This code allows the user to pick from the list given with the price to match it in numerical order. This code allows the user to buy as many copies of each item he or she would like. This code gives the following subtotal and total with tax vlaues applied to it with a final reciept copy that the buyer may or may not like.
+ */
+import java.util.*;
+public class shoppingList {
+static Scanner input = new Scanner (System.in);
+String	itemName;
+String userInput[];
+double subtotal;
+int amountOfItem;
+int index;
+//int itemLocation;
+double price[] = {24.99, 6.99,1.99,2.49,19.99,49.99, 8.49 , 9.99, 0.99, 5.99};
+String items[] = {"Phone-case","Chicken-McWrap","Potato-Chips", "Chocolate-Bar" , "Sunglasses", "laptop-case", "Water-bottle", "Headphones", "Bubble-Gum " , "KeyChain"};
+	public void printingPrice(){
+		System.out.println("The Price is : " + "\t");
+		System.out.println("--------------");
+		for(int index =0; index < price.length; index++){
+			
+			System.out.println(price[index]);
+			
+		}//end of for loop
+	}//end of priceOneDArray
+
+	//this following section of code prints the two arrays of the price and items you can buy
+	public void printingItems(){
+		System.out.println("The Following Options for you to be buy are :  " + "\t");
+		System.out.println("--------------------------------------------");
+		for( int index1 = 0; index1<items.length; index1++){
+			System.out.println(items[index1]);
+		}
+	}//end of printing items
+//this method is used to find the price of each item and the parameter is not needed because these are declared above and there is a return type of itemsPrice which is the dependent item
+public double findPriceOfItem(String items[], double price[]){
+	double itemPrice = 0;
+	System.out.println("Please enter the name of the item you want");
+	itemName = input.next();
+	for(int index =0; index < items.length; index++){
+		if(itemName.equalsIgnoreCase(items[index])){
+			itemPrice = price[index];
+		}//end of  if statement
+		else{
+			return -1;
+		}//end of else loop
+	}//end of for loop
+	return itemPrice;
+}//end of findPriceOfItem
+
+//this section of the code will prompt you for the total amount of items you would like to buy and the item name. There is also no return type
+public 	void proceedShopping(){
+	
+	System.out.println( "please enter the amount of item you would like to purchase");
+	 amountOfItem = input.nextInt();
+	 userInput = new String [amountOfItem]; 
+	 for (int k = 0; k < amountOfItem; k++){
+	    System.out.println("Please enter the name of the item(s) you would like to buy.");
+	    String itemName = input.next();
+	    userInput[k] = itemName;
+	    for (int i =0; i < items.length; i++){
+	    if(itemName.equalsIgnoreCase(items[i])){
+	        subtotal +=  price[i];
+	    }//if
+
+	    }//for index
+	    }//for i
+	   // System.out.println("Your subtotal is: "+subtotal);
+	   // System.out.println("Your total is : " +( subtotal * 1.13));
+}//end of proceedShopping
+// this method id 
+public void arrayMatch(){
+		for( int i = 0 ; i< userInput.length; i++){
+		for (int k = 0 ; k< price.length; k++){
+			if(userInput[i] == items[k]){
+				System.out.println(items[k] + "\t" + "\t" + price[k]);
+				
+				}//end of if
+			}//inner for loop
+		
+		}//end of for loop
+}//end of arrayMacth
+//this section of the code will provide you with your reciept in format and give you subtotal values and total values inculding taxes
+public void reciept(){
+	System.out.println("Your reciept is as following : ");
+	System.out.println("-----------------------------");
+	System.out.println("Items :" + "\t" + "\t" + "Price:");
+	/*for(int i = 0; i< userInput.length; i++){
+		System.out.println(userInput[i]);
+	}//end of for loop*/
+//this part of the code is used to determine and check if userInput[i] which is array stored of user inputs hold values of items[k] and then prints items[k] and price[k] because when both arrays are at k index which are the same price that item holds the correct price as stated	
+for( int i = 0 ; i< userInput.length; i++){
+		for (int k = 0 ; k< price.length; k++){
+			if(userInput[i].equalsIgnoreCase(items[k])){
+				System.out.println(items[k] + "\t" + "\t" + price[k]);
+				
+				}//end of if
+			}//inner for loop
+		
+		}//end of for loop
+	 
+	System.out.println("Your subtotal is: "+subtotal);
+	    System.out.println("Your total is : " + Math.round(( subtotal * 1.13)));
+	System.out.println("-----------------------------");
+}//end of reciept
+
+}//end of class 
