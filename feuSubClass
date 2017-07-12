@@ -1,0 +1,63 @@
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JComboBox;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.*; 
+import javax.swing.*;
+
+public class feuSubClass extends FeuAwarness {
+	JButton Yes ; // reference to the button object
+	JButton No;
+	
+	JLabel label;
+
+	// constructor for ButtonFrame2
+	
+	public void solution1(){
+	
+		System.out.println("Since you are with" + ispName + "we have a dedicated plan for you" );
+		System.out.println("here is a vpn we reccomend ");
+		  
+		
+	//import Gui showing VPN
+		
+	}//end of solution 1
+	//this is to make my GUi with standard jframe and set size and etc
+	public void GUI(){
+		
+		JFrame guiFrame = new JFrame();
+		
+        
+        //make sure the program exits when the frame closes
+        guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        guiFrame.setTitle("Best Free VPN *HOTSPOT SHIELD* (CLICK TO START USING VPN)");
+        guiFrame.setSize(400,250);
+        guiFrame.setLocationRelativeTo(null);
+        guiFrame.add(new JLabel(new ImageIcon("C:\\Users\\aaiya\\Desktop\\apps.21087.9007199266285780.d5cec3a9-9b23-4d79-8941-4a6eac35b333.png")));
+        guiFrame.setVisible (true);
+      //Options for the JComboBox
+        String [][] vpnOption = { 
+        		
+        }; 
+	}//end of GUI
+	//this section of the code randomly keep changing your IP address so your ip is not static any more
+	public static void IPAdressConfig(){
+	System.out.println("\n" + "\n" +"\n");
+		System.out.println("your ip address has been changed to : ");
+	System.out.print("\t"+(int) Math.floor(Math.random() * 256)+"."+(int)Math.floor(Math.random() * 256)+"."+(int)Math.floor(Math.random() * 256)+"."+(int)Math.floor(Math.random() * 256) );
+	System.out.print("\t" + "for security reasons" );
+		
+	}//IPAdressConfig
+	//this section of the code just give you a overview of hot-spot shield 
+	public static void hotspotShield(){
+		System.out.println();
+		System.out.println("\n" +"Hotspot Shield is a software application developed by AnchorFree, Inc. that allows the user to connect to a virtual private network (VPN)." + "\n" +" It is used for securing Internet connections, often in unsecured networks.");
+		System.out.println("\n" +"Hotspot Shield establishes a virtual private network connection."+"\n" + "The software usually protects information from being accessed or tracked by third parties.[7] "+"\n"+"AnchorFree operates Hotspot Shield with a freemium business model: the main features of the software are free," + "\n" +" but users have to pay to get additional features, which include the elimination of advertisements, antivirus protection and " + "\n" + " the ability to choose which country from several wherein the VPN is located." );
+	}//hotspotShield
+}//end of extended class
